@@ -9,18 +9,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 3px solid blue;
+
 }
 
 /* Form container */
 .form-container {
-  width: 100%;
-  max-width: 400px;
+  min-width: 500px;
   text-align: center;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: white;
   padding: 1.5rem;
   transition: transform 0.5s;
+  /* border: 3px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-container:hover {
@@ -56,15 +62,16 @@
 }
 
 .textarea:focus {
-  border-color: #63b3ed;
-  box-shadow: 0 0 8px rgba(66, 153, 225, 0.5);
+  border-color: rgb(58, 221, 221);
+  box-shadow: 0 0 8px rgb(58, 221, 221);
 }
 
 /* Button */
 .button {
   background-color: rgb(58, 221, 221);
-  color: white;
-  padding: 0.75rem;
+  color: #242424;
+  font-weight: 600;
+  padding: 1rem;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -82,11 +89,11 @@
 
 /* Answer container */
 .answer-container {
-  width: 100%;
-  max-width: 400px;
+  min-width: 500px;
   text-align: center;
   border-radius: 10px;
   background-color: white;
+  color:black;
   margin-top: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem;
