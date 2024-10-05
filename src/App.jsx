@@ -38,7 +38,7 @@ function App() {
     <div className="bg-gradient">
       <form onSubmit={generateAnswer} className="form-container">
       
-          <h1 className="form-heading">Chat AI</h1>
+          <h1 className="form-heading">Echo AI</h1>
       
         <textarea
           required
