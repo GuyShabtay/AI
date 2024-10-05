@@ -8,9 +8,12 @@ const DialogWorkflow = () => {
   const [text, setText] = useState('');
   const [sendLoader, setSendLoader] = useState(false);
   const [receiveLoader, setReceiveLoader] = useState(false);
-  const [getMessages, setGetMessages] = useState([]);
+  const [getMessages, setGetMessages] = useState([
+    { type: 'receive', message: 'Hello, How can I help you?' } // Default AI message on load
+  ]);
   const [history, setHistory] = useState([]);
   const dialogContainerRef = useRef(null);
+  const textareaRef = useRef(null); // Reference to the textarea
 
   const generateAnswer = async () => {
     setReceiveLoader(true);
@@ -51,6 +54,10 @@ const DialogWorkflow = () => {
       ]);
       // Clear input
       setText('');
+      // Reset textarea height
+      if (textareaRef.current) {
+        textareaRef.current.style.height = 'auto'; // Reset to default height
+      }
       // Get the generated response from the Google API
       await generateAnswer();
     } catch (error) {
@@ -64,6 +71,17 @@ const DialogWorkflow = () => {
     const textarea = event.target;
     setText(textarea.value);
     adjustTextareaHeight(textarea);
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      // Prevent default behavior of Enter (which is adding a new line)
+      event.preventDefault();
+      // Trigger send button press when only Enter is pressed
+      if (text.trim() !== '') {
+        sendButtonPressed();
+      }
+    }
   };
 
   const adjustTextareaHeight = (textarea) => {
@@ -93,8 +111,7 @@ const DialogWorkflow = () => {
                 <strong>{result.type === 'send' ? 'You' : 'AI'}:</strong> {result.message}
               </p>
             ))}
-            {sendLoader && <p>Sending message...</p>}
-            {receiveLoader && <p>Receiving response...</p>}
+            {(sendLoader || receiveLoader) && <p>Loading...</p>}
           </div>
         </div>
         <div className='prompt-container'>
@@ -103,7 +120,9 @@ const DialogWorkflow = () => {
             placeholder={ASKING_FOR_MESSAGE}
             value={text}
             onChange={handleChange}
+            onKeyDown={handleKeyDown} // Handle Enter and Shift + Enter
             rows={1}
+            ref={textareaRef} // Reference to the textarea element
           />
           <button id='send-btn' onClick={sendButtonPressed} disabled={sendLoader || receiveLoader}>
             Send
