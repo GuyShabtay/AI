@@ -1,0 +1,97 @@
+/* App.css */
+
+/* Background gradient */
+.bg-gradient {
+  /* background: linear-gradient(to right, #ebf8ff, #ebf4ff); */
+  height: 100vh;
+  /* padding: 1rem; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Form container */
+.form-container {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 1.5rem;
+  transition: transform 0.5s;
+}
+
+.form-container:hover {
+  transform: scale(1.05);
+}
+
+/* Heading */
+.form-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4299e1;
+  margin-bottom: 1rem;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Textarea */
+.textarea {
+  border: 1px solid #e2e8f0;
+  border-radius: 5px;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+
+.textarea:focus {
+  border-color: #63b3ed;
+  box-shadow: 0 0 8px rgba(66, 153, 225, 0.5);
+}
+
+/* Button */
+.button {
+  background-color: #4299e1;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #3182ce;
+}
+
+.button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Answer container */
+.answer-container {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: white;
+  margin-top: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: transform 0.5s;
+}
+
+.answer-container:hover {
+  transform: scale(1.05);
+}
