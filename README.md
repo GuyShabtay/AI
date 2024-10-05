@@ -15,7 +15,7 @@ VITE_API_GENERATIVE_LANGUAGE_CLIENT="your Google API key"
 - Start the application:
 <pre><code>npm run dev</code></pre>
 
-- Enter to this URL on your browser
+- Enter this URL on your browser
 <pre><code>http://localhost:5173/</code></pre>
 
 ## Technologies
