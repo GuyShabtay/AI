@@ -1,0 +1,108 @@
+#dialog-workflow {
+  background-color: rgb(25, 25, 25);
+  width: 80%;
+  height: 100%;
+  position: fixed; 
+  left: 20%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  color:white;
+}
+h1{
+  margin: 2vh 0;
+
+}
+
+.chat-container {
+  border-radius: 2vw;
+  width: 97%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 2vh;
+  background-color: #333;
+
+}
+.dialog-container{
+  background-color: rgb(25, 25, 25);
+  border-radius: 2vw;
+  width: 97%;
+  height: 70vh;
+  margin-bottom: 2vh;
+  margin-top:4vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth; 
+
+}
+.prompt-container {
+  background-color: none;
+  border-radius: 1.5vw;
+  width: 90%;
+  min-height: fit-content;;
+  position: relative;
+  padding: 20px;
+  align-self: flex-start;
+  padding-right: 30px;
+  margin-left: 35px;
+}
+#send-btn{
+border: solid white 1px;
+border-radius: 1.5vw;
+background-color: #333;
+color:white;
+height: fit-content;
+width: fit-content;
+padding: 5px 10px;
+cursor: pointer;
+position: absolute;
+  bottom: 5px;
+  right: 15px;
+}
+
+#send-btn:hover{
+  color: rgba(255, 255, 255, 0.893);
+  border: solid rgba(255, 255, 255, 0.893) 1px;
+}
+
+.focused{
+  border: solid white 1px;
+}
+p{
+  margin: 2vh 0 0 2vw;
+}
+
+
+
+
+#text-input{
+
+  width: 85%;
+    height:fit-content;
+  background: rgb(173, 168, 168);
+  border: none;
+  outline: none; 
+  color: white;
+  overflow:visible ;
+  resize: none;
+  border-radius: 1.5vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 15px 20px;
+  background-color: rgb(25, 25, 25);
+  max-height: 20vh;
+}
+#text-input:focus{
+  border: solid white 1px;
+
+}
+#text-input::-webkit-scrollbar {
+  display: none;
+}
+
+

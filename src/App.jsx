@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import axios from "axios";
 import ReactMarkdown from "react-markdown";
+import DialogWorkflow from './DialogWorkflow/DialogWorkflow'
 
 function App() {
   const [question, setQuestion] = useState("");
@@ -35,29 +36,32 @@ function App() {
   }
 
   return (
-    <div className="bg-gradient">
-      <form onSubmit={generateAnswer} className="form-container">
+    // <div className="bg-gradient">
+    //   <form onSubmit={generateAnswer} className="form-container">
       
-          <h1 className="form-heading">Echo AI</h1>
+    //       <h1 className="form-heading">Echo AI</h1>
       
-        <textarea
-          required
-          className="textarea"
-          value={question}
-          onChange={(e) => setQuestion(e.target.value)}
-          placeholder="Ask anything"
-        ></textarea>
-        <button
-          type="submit"
-          className={`button ${generatingAnswer ? "disabled" : ""}`}
-          disabled={generatingAnswer}
-        >
-          Generate answer
-        </button>
-      </form>
-      <div className="answer-container">
-        <ReactMarkdown className="p-4">{answer}</ReactMarkdown>
-      </div>
+    //     <textarea
+    //       required
+    //       className="textarea"
+    //       value={question}
+    //       onChange={(e) => setQuestion(e.target.value)}
+    //       placeholder="Ask anything"
+    //     ></textarea>
+    //     <button
+    //       type="submit"
+    //       className={`button ${generatingAnswer ? "disabled" : ""}`}
+    //       disabled={generatingAnswer}
+    //     >
+    //       Generate answer
+    //     </button>
+    //   </form>
+    //   <div className="answer-container">
+    //     <ReactMarkdown className="p-4">{answer}</ReactMarkdown>
+    //   </div>
+    // </div>
+    <div>
+    <DialogWorkflow/>
     </div>
   );
 }
